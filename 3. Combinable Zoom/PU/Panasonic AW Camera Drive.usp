@@ -1,0 +1,397 @@
+/*******************************************************************************************
+  SIMPL+ Module Information
+  (Fill in comments below)
+*******************************************************************************************/
+/*
+Dealer Name:
+System Name:
+System Number:
+Programmer:
+Comments:
+*/
+
+/*******************************************************************************************
+  Compiler Directives
+  (Uncomment and declare compiler directives as needed)
+*******************************************************************************************/
+// #ENABLE_DYNAMIC
+#SYMBOL_NAME "Panasonic AW Camera Drive"
+// #HINT ""
+// #DEFINE_CONSTANT
+// #CATEGORY "" 
+#CATEGORY "19" // Camera
+// #PRINT_TO_TRACE
+// #DIGITAL_EXPAND 
+// #ANALOG_SERIAL_EXPAND 
+// #OUTPUT_SHIFT 
+// #HELP_PDF_FILE ""
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#ENCODING_ASCII
+// #ENCODING_UTF16
+// #ENCODING_INHERIT_FROM_PARENT
+// #ENCODING_INHERIT_FROM_PROGRAM
+/*
+#HELP_BEGIN
+   (add additional lines of help lines)
+#HELP_END
+*/
+
+/*******************************************************************************************
+  Constants
+*******************************************************************************************/
+
+#DEFINE_CONSTANT disconnectTime 1000 //10s
+
+
+/*******************************************************************************************
+  Include Libraries
+  (Uncomment and include additional libraries as needed)
+*******************************************************************************************/
+// #CRESTRON_LIBRARY ""
+// #USER_LIBRARY ""
+
+/*******************************************************************************************
+  DIGITAL, ANALOG and SERIAL INPUTS and OUTPUTS
+  (Uncomment and declare inputs and outputs as needed)
+*******************************************************************************************/
+DIGITAL_INPUT _SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_;
+STRING_INPUT _SKIP_, _SKIP_, Command$[15];
+
+DIGITAL_OUTPUT _SKIP_,_SKIP_,_SKIP_,_SKIP_,_SKIP_,doClientConnected;
+
+ANALOG_OUTPUT  aoClientStatus;
+
+STRING_OUTPUT Response$;
+
+/*******************************************************************************************
+  SOCKETS
+  (Uncomment and define socket definitions as needed)
+*******************************************************************************************/
+TCP_CLIENT MyClient[1024];
+// TCP_SERVER
+// UDP_SOCKET
+
+/*******************************************************************************************
+  Parameters
+  (Uncomment and declare parameters as needed)
+*******************************************************************************************/
+INTEGER_PARAMETER HTTP_PortNumber;
+STRING_PARAMETER Server_IP_Address[256];
+INTEGER_PARAMETER ClientReconnectEnable;
+STRING_PARAMETER Resource_String[50];
+STRING_PARAMETER Postamble_String[10];
+
+/*******************************************************************************************
+  Parameter Properties
+  (Uncomment and declare parameter properties as needed)
+*******************************************************************************************/
+
+#BEGIN_PARAMETER_PROPERTIES HTTP_PortNumber
+    propValidUnits = unitDecimal;// unitString or unitDecimal|unitHex|unitPercent|unitCharacter|unitTime|unitTicks;
+    propDefaultUnit = unitDecimal;// unitString, unitDecimal, unitHex, unitPercent, unitCharacter, unitTime or unitTicks;
+    propBounds = 1d , 65535d;
+    propDefaultValue = 80d;  // or, propDefaultValue = "";
+    //propList = // { "value" , "label" } , { "value" , "label" } , ... ;
+    propShortDescription = "Port number of camera";
+    //#BEGIN_PROP_FULL_DESCRIPTION  line_1...  line_2...  line_n  #END_PROP_FULL_DESCRIPTION
+    //#BEGIN_PROP_NOTES line_1...  line_2...  line_n  #END_PROP_NOTES
+#END_PARAMETER_PROPERTIES
+#BEGIN_PARAMETER_PROPERTIES Server_IP_Address
+    propValidUnits = unitString;// unitString or unitDecimal|unitHex|unitPercent|unitCharacter|unitTime|unitTicks;
+    propDefaultUnit = unitString;// unitString, unitDecimal, unitHex, unitPercent, unitCharacter, unitTime or unitTicks;
+    //propBounds =;
+    propDefaultValue = "192.168.1.100";  // or, propDefaultValue = "";
+    //propList = // { "value" , "label" } , { "value" , "label" } , ... ;
+    propShortDescription = "IP address of camera";
+    //#BEGIN_PROP_FULL_DESCRIPTION  line_1...  line_2...  line_n  #END_PROP_FULL_DESCRIPTION
+    //#BEGIN_PROP_NOTES line_1...  line_2...  line_n  #END_PROP_NOTES
+#END_PARAMETER_PROPERTIES
+#BEGIN_PARAMETER_PROPERTIES ClientReconnectEnable
+    propValidUnits = unitDecimal;// unitString or unitDecimal|unitHex|unitPercent|unitCharacter|unitTime|unitTicks;
+    propDefaultUnit = unitDecimal;// unitString, unitDecimal, unitHex, unitPercent, unitCharacter, unitTime or unitTicks;
+    //propBounds =;
+    propDefaultValue = 1d;  // or, propDefaultValue = "";
+    propList = {0d, "False"}, {1d, "True"};// { "value" , "label" } , { "value" , "label" } , ... ;
+    propShortDescription = "Reconnect if connection closed by remote";
+    //#BEGIN_PROP_FULL_DESCRIPTION  line_1...  line_2...  line_n  #END_PROP_FULL_DESCRIPTION
+    //#BEGIN_PROP_NOTES line_1...  line_2...  line_n  #END_PROP_NOTES
+#END_PARAMETER_PROPERTIES
+#BEGIN_PARAMETER_PROPERTIES Resource_String
+    propValidUnits = unitString;// unitString or unitDecimal|unitHex|unitPercent|unitCharacter|unitTime|unitTicks;
+    propDefaultUnit = unitString;// unitString, unitDecimal, unitHex, unitPercent, unitCharacter, unitTime or unitTicks;
+    //propBounds =;
+    propDefaultValue = "/cgi-bin/aw_ptz?cmd=%23";  // or, propDefaultValue = "";
+    //propList = // { "value" , "label" } , { "value" , "label" } , ... ;
+    propShortDescription = "First part of camera command";
+    //#BEGIN_PROP_FULL_DESCRIPTION  line_1...  line_2...  line_n  #END_PROP_FULL_DESCRIPTION
+    //#BEGIN_PROP_NOTES line_1...  line_2...  line_n  #END_PROP_NOTES
+#END_PARAMETER_PROPERTIES
+#BEGIN_PARAMETER_PROPERTIES Postamble_String
+    propValidUnits = unitString;// unitString or unitDecimal|unitHex|unitPercent|unitCharacter|unitTime|unitTicks;
+    propDefaultUnit = unitString;// unitString, unitDecimal, unitHex, unitPercent, unitCharacter, unitTime or unitTicks;
+    //propBounds =;
+    propDefaultValue = "&res=1";  // or, propDefaultValue = "";
+    //propList = // { "value" , "label" } , { "value" , "label" } , ... ;
+    propShortDescription = "Last part of camera command";
+    //#BEGIN_PROP_FULL_DESCRIPTION  line_1...  line_2...  line_n  #END_PROP_FULL_DESCRIPTION
+    //#BEGIN_PROP_NOTES line_1...  line_2...  line_n  #END_PROP_NOTES
+#END_PARAMETER_PROPERTIES
+
+
+/*******************************************************************************************
+  Structure Definitions
+  (Uncomment and define structure definitions as needed)
+  Note:  Be sure to initialize all declared STRING variables as needed
+         For example, in Function Main: struct.myString = "";
+*******************************************************************************************/
+/*
+STRUCTURE MyStruct1
+{
+};
+
+MyStruct1 struct;
+*/
+
+/*******************************************************************************************
+  Global Variables
+  (Uncomment and declare global variables as needed)
+  Note:  Be sure to initialize all declared STRING variables as needed
+         For example, in Function Main: myString = "";
+*******************************************************************************************/
+STRING sClientRx$[256],CommandValue$[256],ReplyErr$[256],ReplyValue$[256],rndm$[256];
+STRING CommandList[512], RXCommand[512],NextCommand[256],ReplyOK[256];
+INTEGER hex_tab[16],Rxvalue,iStartClient;
+INTEGER RXoK,ProcessingCommands, ReplyAck, HelpRX, Query;
+SIGNED_LONG_INTEGER chrsz, bin[2000], binArray[4];
+
+/*******************************************************************************************
+  Functions
+  (Add any additional functions here)
+  Note:  Functions must be physically placed before the location in
+         the code that calls them.
+*******************************************************************************************/
+Integer_Function fStartClient()
+{
+    SIGNED_INTEGER istatus;
+	
+	iStartClient=1;
+    istatus = SocketConnectClient (MyClient, Server_IP_Address, HTTP_PortNumber, ClientReconnectEnable);
+    Return(istatus);//0=success, negative number=err
+}
+
+Integer_Function fStopClient()
+{
+    SIGNED_INTEGER istatus;
+    
+	delay(5);
+	iStartClient=0;
+    istatus = SocketDisconnectClient(MyClient);
+    Trace("Disconnect Status: %d\n", istatus);
+    Return(istatus);//0=success, negative number=err
+    }
+
+Integer_Function fClientTX(string ClientTx$)
+{
+    SIGNED_INTEGER iStatus;
+    
+    iStatus = SocketSend(MyClient, ClientTx$ );  	
+    Return(istatus);//0=success, positive value=success, negative number=err
+}
+
+String_Function GetNextCommand()
+{    
+    string TempString[256];
+	TempString = remove("\r",CommandList);
+	IF(len(TempString) > 0)
+	{
+		NextCommand = RemoveByLength(len(TempString) - 1, TempString);  
+    	ReplyOK = NextCommand;
+    	Return(NextCommand);
+	}
+}
+
+
+function SendCommand()
+{
+	string CommandToSend$[256];
+	makestring(CommandToSend$,"GET %s%s%s HTTP/1.0\n",Resource_String, GetNextCommand(), Postamble_String);
+	fClientTX(CommandToSend$);
+	makestring(CommandToSend$,"Host: %s\n",Server_IP_Address);
+	fClientTX(CommandToSend$);
+	//makestring(CommandToSend$,"Connection: Keep-Alive\n");
+	//fClientTX(CommandToSend$);
+
+	fClientTX("\n");
+}
+
+
+function ProcessCommands()
+{
+	ProcessingCommands = 1;
+	while (len(CommandList))// && doClientConnected)//iStartClient)//(aoClientStatus = 2))
+	{
+		trace("ReplyAck: %d", ReplyAck);
+		if (ReplyAck)
+		{	    
+		    ReplyAck = 0;
+		    if(aoClientStatus <> 2) 
+		    {
+		    	fStartClient();
+		    	trace("fStartClient");
+		    }
+		    while(aoClientStatus <> 2);
+		 	SendCommand();
+		 	wait(200,waiter)
+		    {
+		      ReplyAck = 1;
+		      ProcessingCommands = 0;
+		      trace("No Ack received on transmission");
+		      fStopClient();
+		      ClearBuffer(CommandList);
+		    }	  
+		}
+		delay(50); 	
+	}
+    ProcessingCommands = 0;
+}
+    
+
+
+
+/*******************************************************************************************
+  Event Handlers
+  (Uncomment and declare additional event handlers as needed)
+*******************************************************************************************/
+CHANGE Command$
+{
+	CommandList = Command$ + "\r";
+	//CommandList = CommandList +  Command$ + "\r"; 
+	trace("Command List: %s\n", CommandList);
+	trace("ProcessingCommands: %d", ProcessingCommands);
+	if (!ProcessingCommands)
+	{
+		trace("ProcessCommands");
+		ProcessCommands();
+		wait(200,waiter2)
+		{
+			ReplyAck = 1;
+			ProcessingCommands = 0;
+		}
+	}
+	//else if ((aoClientStatus !=2) && (!iStartClient))
+	//{
+	//	fStartClient();
+	//	ProcessCommands();
+	//}
+}
+
+SOCKETCONNECT MyClient
+{
+    SIGNED_LONG_INTEGER PortNumber;
+    SIGNED_INTEGER LocalStatus;
+    STRING RemoteIPAddress[20];
+    STRING RequestedAddress[256];
+
+    doClientConnected = 1;
+    LocalStatus = SocketGetAddressAsRequested(MyClient, RequestedAddress);
+    if (LocalStatus < 0)
+        trace("Client: Error getting remote ip address. %d\n", LocalStatus); 
+
+    PortNumber = SocketGetPortNumber(MyClient);
+    if (PortNumber < 0)
+        trace("Client: Error getting client port number. %ld\n", PortNumber);
+
+    LocalStatus = SocketGetRemoteIPAddress(MyClient, RemoteIPAddress);
+    if (LocalStatus < 0)
+        trace("Client: Error getting remote ip address. %d\n", LocalStatus);
+}
+
+SOCKETDISCONNECT MyClient
+{
+    ReplyAck = 1;
+    doClientConnected = 0;
+    if (iStartClient)
+    {
+        trace("Client: Socket disconnected remotely");
+    	iStartClient = 0;
+    }
+}
+
+SOCKETSTATUS MyClient
+{
+    SIGNED_INTEGER Status;   
+
+    Status = SocketGetStatus();
+	if(Status=2)
+	{
+		wait(disconnectTime,autodisconnect)
+		{
+			fStopClient();
+		}
+	} 
+	else
+	{
+		cancelwait(autodisconnect);
+	}
+    aoClientStatus = Status;
+}
+
+SOCKETRECEIVE MyClient
+{
+	integer ReplyErrLen,ReplyValueLen;
+	integer nIteration; 
+	CancelWait(waiter);
+	CancelWait(waiter2);
+	//trace("****Buffer: %s\n", MyClient.SocketRxBuf);
+    IF(RXoK)
+	{
+		RXoK = 0;
+		nIteration = 0;
+		while( find("\n",MyClient.SocketRxBuf) > 0)
+		{
+         	nIteration = nIteration + 1;
+			RXCommand = remove("\n",MyClient.SocketRxBuf);
+			trace("%d - %s\n", nIteration, RXCommand);
+			ReplyAck = 1;
+ 		}
+ 		nIteration = nIteration + 1;
+ 		RXCommand = MyClient.SocketRxBuf;
+ 		CLEARBUFFER(MyClient.SocketRxBuf);
+		trace("%d - %s\n", nIteration, RXCommand);
+		Response$ = RXCommand;
+		ReplyAck = 1;
+ 		RXoK = 1; 
+ 		fStopClient();
+ 	} // end RXoK guard
+	IF(len(MyClient.SocketRxBuf) > 1000)
+	{
+		CLEARBUFFER(MyClient.SocketRxBuf);
+		trace("****Buffer Emergency Clear!****\n");		
+	}
+	//CLEARBUFFER(MyClient.SocketRxBuf);
+	//trace("****Buffer Cleared****\n");
+	//trace("****Final Buffer: %s\n", MyClient.SocketRxBuf);
+}
+
+/*******************************************************************************************
+  Main()
+  Uncomment and place one-time startup code here
+  (This code will get called when the system starts up)
+*******************************************************************************************/
+
+Function Main()
+{
+    // TODO:  Add code here
+    // Initialize declared global and local variables/arrays as needed.
+
+    WaitForInitializationComplete();
+	chrsz = 8; 
+	RXoK = 1; 
+	ProcessingCommands = 0;
+	Query = 0;
+	ReplyAck = 1;
+}
+
+

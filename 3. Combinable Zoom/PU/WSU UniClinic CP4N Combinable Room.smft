@@ -1,0 +1,9 @@
+<Device Model="CP4N">
+   <Network Type="Cresnet" Id="01"/>
+   <Network Type="Ethernet" Id="02">
+      <Device Model="TSW-1070" DeviceId="03" Name="Room 1"/>
+      <Device Model="TSW-1070" DeviceId="04" Name="Room 2"/>
+      <Device Model="DM-TXRX-100-STR" DeviceId="05" Name="Room 1"/>
+      <Device Model="DM-TXRX-100-STR" DeviceId="06" Name="Room 2"/>
+   </Network>
+</Device>
