@@ -1,0 +1,18 @@
+WARNING(LGCMCVT220)  
+        ** Signal "DIS1_Src_HDMI1_OS" on symbol S-4.4 has a previously defined driving source.
+WARNING(LGCMCVT220)  
+        ** Signal "DIS1_Src_HDMI2_OS" on symbol S-4.4 has a previously defined driving source.
+WARNING(LGCMCVT220)  
+        ** Signal "DIS2_Src_HDMI1_OS" on symbol S-4.4 has a previously defined driving source.
+WARNING(LGCMCVT220)  
+        ** Signal "DIS2_Src_HDMI2_OS" on symbol S-4.4 has a previously defined driving source.
+WARNING(LGCMCVT220)  
+        ** Signal "DIS2_Src_DVI_OS" on symbol S-4.4 has a previously defined driving source.
+NOTICE (LGCMCVT103)  
+        ** Signal "TP2_Admin_config-save" has no destination.
+NOTICE (LGCMCVT103)  
+        ** Signal "TP2_Admin_config-load" has no destination.
+NOTICE (LGCMCVT103)  
+        ** Signal "TP1_Admin_config-save" has no destination.
+NOTICE (LGCMCVT103)  
+        ** Signal "TP1_Admin_config-load" has no destination.

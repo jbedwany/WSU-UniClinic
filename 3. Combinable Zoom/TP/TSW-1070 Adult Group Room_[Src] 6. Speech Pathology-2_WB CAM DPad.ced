@@ -10,7 +10,7 @@ VTProeVer=6.2.02
 ObjTp=Symbol
 Name=TSW-1070 Adult Group Room_[Src] 6. Speech Pathology-2_WB CAM DPad.ced
 Hint=WB CAM DPad (Smart Object ID=1)
-Code=4
+Code=6
 SGControlType=DPad
 SGControlName=WB CAM DPad
 GUID=F76C331A-5158-4636-8B5E-B45293647BE0
@@ -56,14 +56,14 @@ OutputSigType5=Digital
 ParamCue1=SmartObjectId
 ParamSigType1=Constant
 MPp=1
-Pp1=4
-CedH=4
+Pp1=6
+CedH=6
 SmartObjId=1d
 ]
 ; Parameter Properties for Smart Object ID
 [
 ObjTp=Dp
-H=4
+H=6
 Tp=1
 HD=TRUE
 DV=1d
@@ -76,7 +76,7 @@ Sgn=0
 ; Smart Objects Definition section
 [
 ObjTp=CED
-H=4
+H=6
 Name=TSW-1070 Adult Group Room_[Src] 6. Speech Pathology-2_WB CAM DPad.ced
 ;Cedver is the version of the Smart Graphics control, not the CED file format.
 ;If the control definition changes, increment this.

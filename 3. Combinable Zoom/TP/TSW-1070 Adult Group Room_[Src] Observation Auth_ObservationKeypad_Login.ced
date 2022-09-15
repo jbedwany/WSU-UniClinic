@@ -10,7 +10,7 @@ VTProeVer=6.2.02
 ObjTp=Symbol
 Name=TSW-1070 Adult Group Room_[Src] Observation Auth_ObservationKeypad_Login.ced
 Hint=ObservationKeypad_Login (Smart Object ID=8)
-Code=5
+Code=7
 SGControlType=Simple Keypad
 SGControlName=ObservationKeypad_Login
 GUID=83D817CD-4C32-462D-BFDE-611522C7DCB6
@@ -84,14 +84,14 @@ OutputSigType12=Digital
 ParamCue1=SmartObjectId
 ParamSigType1=Constant
 MPp=1
-Pp1=5
-CedH=5
+Pp1=7
+CedH=7
 SmartObjId=8d
 ]
 ; Parameter Properties for Smart Object ID
 [
 ObjTp=Dp
-H=5
+H=7
 Tp=1
 HD=TRUE
 DV=8d
@@ -104,7 +104,7 @@ Sgn=0
 ; Smart Objects Definition section
 [
 ObjTp=CED
-H=5
+H=7
 Name=TSW-1070 Adult Group Room_[Src] Observation Auth_ObservationKeypad_Login.ced
 ;Cedver is the version of the Smart Graphics control, not the CED file format.
 ;If the control definition changes, increment this.

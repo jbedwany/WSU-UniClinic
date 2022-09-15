@@ -1,0 +1,13 @@
+1:Room1Name:24.1.78;
+2:Room2Name:24.1.79;
+3:Display1Name:24.1.78;
+4:Display2Name:24.1.79;
+5:Room1ObservationPreset1Name:Front View;
+6:Room1ObservationPreset2Name:Side View;
+7:Room1ObservationPreset3Name:Inside Out View;
+8:Room2ObservationPreset1Name:Front View;
+9:Room2ObservationPreset2Name:Side View;
+10:Room2ObservationPreset3Name:Inside Out View;
+11:Ceiling Mic Text:Ceiling Mic;
+12:Program Text:Program;
+13:VC Text:VC Audio;

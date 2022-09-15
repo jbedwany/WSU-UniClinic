@@ -1,9 +1,15 @@
 <Device Model="CP4N">
    <Network Type="Cresnet" Id="01"/>
    <Network Type="Ethernet" Id="02">
-      <Device Model="TSW-1070" DeviceId="03" Name="Room 1"/>
-      <Device Model="TSW-1070" DeviceId="04" Name="Room 2"/>
       <Device Model="DM-TXRX-100-STR" DeviceId="05" Name="Room 1"/>
       <Device Model="DM-TXRX-100-STR" DeviceId="06" Name="Room 2"/>
+      <Device Model="TSW-1070" DeviceId="A0" Name="Room 1"/>
+      <Device Model="TSW-1070" DeviceId="A2" Name="Room 2"/>
+      <Device Model="Fusion Room" DeviceId="F0" Name="24.1.78"/>
+      <Device Model="Core3 UI XPanel" DeviceId="F1" Name="Web"/>
+      <Device Model="Core3 UI XPanel" DeviceId="F2" Name="Executable"/>
+      <Device Model="Fusion Room" DeviceId="F3" Name="24.1.79"/>
+      <Device Model="Core3 UI XPanel" DeviceId="F4" Name="Web"/>
+      <Device Model="Core3 UI XPanel" DeviceId="F5" Name="Executable"/>
    </Network>
 </Device>
