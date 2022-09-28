@@ -10,7 +10,7 @@ VTProeVer=6.2.02
 ObjTp=Symbol
 Name=TSW-1070 Observation Room_[Bar Right_Src] PTZ Controls_WB CAM DPad.ced
 Hint=WB CAM DPad (Smart Object ID=1)
-Code=6
+Code=2
 SGControlType=DPad
 SGControlName=WB CAM DPad
 GUID=8F54307E-A95D-44A3-9852-002371C8BF93
@@ -56,14 +56,14 @@ OutputSigType5=Digital
 ParamCue1=SmartObjectId
 ParamSigType1=Constant
 MPp=1
-Pp1=6
-CedH=6
+Pp1=2
+CedH=2
 SmartObjId=1d
 ]
 ; Parameter Properties for Smart Object ID
 [
 ObjTp=Dp
-H=6
+H=2
 Tp=1
 HD=TRUE
 DV=1d
@@ -76,7 +76,7 @@ Sgn=0
 ; Smart Objects Definition section
 [
 ObjTp=CED
-H=6
+H=2
 Name=TSW-1070 Observation Room_[Bar Right_Src] PTZ Controls_WB CAM DPad.ced
 ;Cedver is the version of the Smart Graphics control, not the CED file format.
 ;If the control definition changes, increment this.

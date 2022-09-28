@@ -4,7 +4,7 @@ Sgntr=SGD
 RelVrs=3
 VTProeVer=6.2.02
 Schema=1
-CRCGUID=6CE00AEA-572D-481D-BF44-185E5EBE071F
+CRCGUID=FB75FF73-2A28-4D6B-832D-3A8E06719643
 ]
 ;================================================================================
 [
@@ -120,118 +120,13 @@ CedVer=1
 ;================================================================================
 [
 ObjTp=Symbol
-Name=XPANEL Speech Pathology_[Adv]_02.Password Setup_PasswordKeypad_Setup.ced
-Hint=PasswordKeypad_Setup (Smart Object ID=4)
+Name=XPANEL Speech Pathology_[Bar Right_Src] PTZ Controls_PTZ Controls.ced
+Hint=PTZ Controls (Smart Object ID=1)
 Code=2
-SGControlType=Simple Keypad
-SGControlName=PasswordKeypad_Setup
-GUID=DA45C51D-46B6-4080-8F85-055BD69E7AB0
-SmplCName=XPANEL Speech Pathology_[Adv]_02.Password Setup_PasswordKeypad_Setup.ced
-SMWRev=4.02.19
-Expand=expand_random
-HelpID=10061
-;Define the number of inputs, outputs and parameters
-MinVariableInputs=12
-MaxVariableInputs=12
-MinVariableOutputs=12
-MaxVariableOutputs=12
-NumFixedParams=1
-MinVariableInputsList2=0
-MaxVariableInputsList2=0
-MinVariableOutputsList2=0
-MaxVariableOutputsList2=0
-MinVariableInputsList3=0
-MaxVariableInputsList3=0
-MinVariableOutputsList3=0
-MaxVariableOutputsList3=0
-;Define the cues, and signal types  each input, output and parameter.
-InputCue1=[~UNUSED3~]
-InputSigType1=Digital
-OutputCue1=1
-OutputSigType1=Digital
-InputCue2=[~UNUSED3~]
-InputSigType2=Digital
-OutputCue2=2
-OutputSigType2=Digital
-InputCue3=[~UNUSED3~]
-InputSigType3=Digital
-OutputCue3=3
-OutputSigType3=Digital
-InputCue4=[~UNUSED3~]
-InputSigType4=Digital
-OutputCue4=4
-OutputSigType4=Digital
-InputCue5=[~UNUSED3~]
-InputSigType5=Digital
-OutputCue5=5
-OutputSigType5=Digital
-InputCue6=[~UNUSED3~]
-InputSigType6=Digital
-OutputCue6=6
-OutputSigType6=Digital
-InputCue7=[~UNUSED3~]
-InputSigType7=Digital
-OutputCue7=7
-OutputSigType7=Digital
-InputCue8=[~UNUSED3~]
-InputSigType8=Digital
-OutputCue8=8
-OutputSigType8=Digital
-InputCue9=[~UNUSED3~]
-InputSigType9=Digital
-OutputCue9=9
-OutputSigType9=Digital
-InputCue10=[~UNUSED3~]
-InputSigType10=Digital
-OutputCue10=0
-OutputSigType10=Digital
-InputCue11=[~UNUSED3~]
-InputSigType11=Digital
-OutputCue11=Misc_1
-OutputSigType11=Digital
-InputCue12=[~UNUSED3~]
-InputSigType12=Digital
-OutputCue12=Misc_2
-OutputSigType12=Digital
-ParamCue1=SmartObjectId
-ParamSigType1=Constant
-MPp=1
-Pp1=2
-CedH=2
-SmartObjId=4d
-]
-; Parameter Properties for Smart Object ID
-[
-ObjTp=Dp
-H=2
-Tp=1
-HD=TRUE
-DV=4d
-NF=1
-DNF=1
-EncFmt=0
-DVLF=1
-Sgn=0
-]
-; Smart Objects Definition section
-[
-ObjTp=CED
-H=2
-Name=XPANEL Speech Pathology_[Adv]_02.Password Setup_PasswordKeypad_Setup.ced
-;Cedver is the version of the Smart Graphics control, not the CED file format.
-;If the control definition changes, increment this.
-CedVer=1
-]
-;================================================================================
-[
-ObjTp=Symbol
-Name=XPANEL Speech Pathology_[Bar Right_Src] PTZ Controls_WB CAM DPad.ced
-Hint=WB CAM DPad (Smart Object ID=1)
-Code=3
 SGControlType=DPad
-SGControlName=WB CAM DPad
+SGControlName=PTZ Controls
 GUID=8F54307E-A95D-44A3-9852-002371C8BF93
-SmplCName=XPANEL Speech Pathology_[Bar Right_Src] PTZ Controls_WB CAM DPad.ced
+SmplCName=XPANEL Speech Pathology_[Bar Right_Src] PTZ Controls_PTZ Controls.ced
 SMWRev=4.02.19
 Expand=expand_random
 HelpID=10015
@@ -273,14 +168,14 @@ OutputSigType5=Digital
 ParamCue1=SmartObjectId
 ParamSigType1=Constant
 MPp=1
-Pp1=3
-CedH=3
+Pp1=2
+CedH=2
 SmartObjId=1d
 ]
 ; Parameter Properties for Smart Object ID
 [
 ObjTp=Dp
-H=3
+H=2
 Tp=1
 HD=TRUE
 DV=1d
@@ -293,85 +188,8 @@ Sgn=0
 ; Smart Objects Definition section
 [
 ObjTp=CED
-H=3
-Name=XPANEL Speech Pathology_[Bar Right_Src] PTZ Controls_WB CAM DPad.ced
-;Cedver is the version of the Smart Graphics control, not the CED file format.
-;If the control definition changes, increment this.
-CedVer=1
-]
-;================================================================================
-[
-ObjTp=Symbol
-Name=XPANEL Speech Pathology_[Adv] Camera PTZ_Local PTZ DPad.ced
-Hint=Local PTZ DPad (Smart Object ID=3)
-Code=4
-SGControlType=DPad
-SGControlName=Local PTZ DPad
-GUID=39AAF655-741B-45F1-B725-195BC3D84342
-SmplCName=XPANEL Speech Pathology_[Adv] Camera PTZ_Local PTZ DPad.ced
-SMWRev=4.02.19
-Expand=expand_random
-HelpID=10015
-;Define the number of inputs, outputs and parameters
-MinVariableInputs=5
-MaxVariableInputs=5
-MinVariableOutputs=5
-MaxVariableOutputs=5
-NumFixedParams=1
-MinVariableInputsList2=0
-MaxVariableInputsList2=0
-MinVariableOutputsList2=0
-MaxVariableOutputsList2=0
-MinVariableInputsList3=0
-MaxVariableInputsList3=0
-MinVariableOutputsList3=0
-MaxVariableOutputsList3=0
-;Define the cues, and signal types  each input, output and parameter.
-InputCue1=[~UNUSED3~]
-InputSigType1=Digital
-OutputCue1=Up
-OutputSigType1=Digital
-InputCue2=[~UNUSED3~]
-InputSigType2=Digital
-OutputCue2=Down
-OutputSigType2=Digital
-InputCue3=[~UNUSED3~]
-InputSigType3=Digital
-OutputCue3=Left
-OutputSigType3=Digital
-InputCue4=[~UNUSED3~]
-InputSigType4=Digital
-OutputCue4=Right
-OutputSigType4=Digital
-InputCue5=[~UNUSED3~]
-InputSigType5=Digital
-OutputCue5=[~UNUSED~]
-OutputSigType5=Digital
-ParamCue1=SmartObjectId
-ParamSigType1=Constant
-MPp=1
-Pp1=4
-CedH=4
-SmartObjId=3d
-]
-; Parameter Properties for Smart Object ID
-[
-ObjTp=Dp
-H=4
-Tp=1
-HD=TRUE
-DV=3d
-NF=1
-DNF=1
-EncFmt=0
-DVLF=1
-Sgn=0
-]
-; Smart Objects Definition section
-[
-ObjTp=CED
-H=4
-Name=XPANEL Speech Pathology_[Adv] Camera PTZ_Local PTZ DPad.ced
+H=2
+Name=XPANEL Speech Pathology_[Bar Right_Src] PTZ Controls_PTZ Controls.ced
 ;Cedver is the version of the Smart Graphics control, not the CED file format.
 ;If the control definition changes, increment this.
 CedVer=1
