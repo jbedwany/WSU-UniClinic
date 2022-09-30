@@ -1,8 +1,24 @@
 <Device Model="CP4N">
    <Network Type="Cresnet" Id="01"/>
    <Network Type="Ethernet" Id="02">
-      <Device Model="Core3 UI XPanel" DeviceId="03" Name="47"/>
-      <Device Model="Core3 UI XPanel" DeviceId="04" Name="49"/>
-      <Device Model="TSW-1070" DeviceId="05" Name="48"/>
+      <Device Model="TSW-1070" DeviceId="A0" Name="48"/>
+      <Device Model="TSW-1070" DeviceId="A2" Name="51"/>
+      <Device Model="Core3 UI XPanel" DeviceId="A3" Name="48 Web"/>
+      <Device Model="Core3 UI XPanel" DeviceId="A4" Name="48 Exe"/>
+      <Device Model="Core3 UI XPanel" DeviceId="A5" Name="51 Web"/>
+      <Device Model="Core3 UI XPanel" DeviceId="A6" Name="51 Exe"/>
+      <Device Model="Fusion Room" DeviceId="F0"/>
+      <Device Model="Core3 UI XPanel" DeviceId="F1" Name="7 Web"/>
+      <Device Model="Core3 UI XPanel" DeviceId="F2" Name="7 Exe"/>
+      <Device Model="Core3 UI XPanel" DeviceId="F3" Name="46 Web"/>
+      <Device Model="Core3 UI XPanel" DeviceId="F4" Name="46 Exe"/>
+      <Device Model="Core3 UI XPanel" DeviceId="F5" Name="47 Web"/>
+      <Device Model="Core3 UI XPanel" DeviceId="F6" Name="47 Exe"/>
+      <Device Model="Core3 UI XPanel" DeviceId="F7" Name="49 Web"/>
+      <Device Model="Core3 UI XPanel" DeviceId="F8" Name="49 Exe"/>
+      <Device Model="Core3 UI XPanel" DeviceId="F9" Name="50 Web"/>
+      <Device Model="Core3 UI XPanel" DeviceId="FA" Name="50 Exe"/>
+      <Device Model="Core3 UI XPanel" DeviceId="FB" Name="52 Web"/>
+      <Device Model="Core3 UI XPanel" DeviceId="FC" Name="52 Exe"/>
    </Network>
 </Device>
