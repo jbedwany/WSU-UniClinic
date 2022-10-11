@@ -32,7 +32,7 @@ namespace UserModule_STRING_ROUTER
                 SplusExecutionContext __context__ = SplusThreadStartCode(__SignalEventArg__);
                 
                 __context__.SourceCodeLine = 54;
-                if ( Functions.TestForTrue  ( ( Functions.BoolToInt ( AISELECT  .UshortValue < 10 ))  ) ) 
+                if ( Functions.TestForTrue  ( ( Functions.BoolToInt ( AISELECT  .UshortValue < 12 ))  ) ) 
                     { 
                     __context__.SourceCodeLine = 55;
                     SOOUTPUT  .UpdateValue ( SIINPUT [ AISELECT  .UshortValue ]  ) ; 
@@ -64,10 +64,10 @@ namespace UserModule_STRING_ROUTER
         AISELECTFB = new Crestron.Logos.SplusObjects.AnalogOutput( AISELECTFB__AnalogSerialOutput__, this );
         m_AnalogOutputList.Add( AISELECTFB__AnalogSerialOutput__, AISELECTFB );
         
-        SIINPUT = new InOutArray<StringInput>( 10, this );
-        for( uint i = 0; i < 10; i++ )
+        SIINPUT = new InOutArray<StringInput>( 12, this );
+        for( uint i = 0; i < 12; i++ )
         {
-            SIINPUT[i+1] = new Crestron.Logos.SplusObjects.StringInput( SIINPUT__AnalogSerialInput__ + i, SIINPUT__AnalogSerialInput__, 128, this );
+            SIINPUT[i+1] = new Crestron.Logos.SplusObjects.StringInput( SIINPUT__AnalogSerialInput__ + i, SIINPUT__AnalogSerialInput__, 255, this );
             m_StringInputList.Add( SIINPUT__AnalogSerialInput__ + i, SIINPUT[i+1] );
         }
         
