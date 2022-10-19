@@ -7,18 +7,25 @@
       <Device Model="Core3 UI XPanel" DeviceId="A4" Name="48 Exe"/>
       <Device Model="Core3 UI XPanel" DeviceId="A5" Name="51 Web"/>
       <Device Model="Core3 UI XPanel" DeviceId="A6" Name="51 Exe"/>
-      <Device Model="Fusion Room" DeviceId="F0"/>
-      <Device Model="Core3 UI XPanel" DeviceId="F1" Name="7 Web"/>
-      <Device Model="Core3 UI XPanel" DeviceId="F2" Name="7 Exe"/>
-      <Device Model="Core3 UI XPanel" DeviceId="F3" Name="46 Web"/>
-      <Device Model="Core3 UI XPanel" DeviceId="F4" Name="46 Exe"/>
-      <Device Model="Core3 UI XPanel" DeviceId="F5" Name="47 Web"/>
-      <Device Model="Core3 UI XPanel" DeviceId="F6" Name="47 Exe"/>
-      <Device Model="Core3 UI XPanel" DeviceId="F7" Name="49 Web"/>
-      <Device Model="Core3 UI XPanel" DeviceId="F8" Name="49 Exe"/>
-      <Device Model="Core3 UI XPanel" DeviceId="F9" Name="50 Web"/>
-      <Device Model="Core3 UI XPanel" DeviceId="FA" Name="50 Exe"/>
-      <Device Model="Core3 UI XPanel" DeviceId="FB" Name="52 Web"/>
-      <Device Model="Core3 UI XPanel" DeviceId="FC" Name="52 Exe"/>
+      <Device Model="Core3 UI XPanel" DeviceId="A7" Name="7 Web"/>
+      <Device Model="Core3 UI XPanel" DeviceId="A8" Name="7 Exe"/>
+      <Device Model="Core3 UI XPanel" DeviceId="A9" Name="46 Web"/>
+      <Device Model="Core3 UI XPanel" DeviceId="AA" Name="46 Exe"/>
+      <Device Model="Core3 UI XPanel" DeviceId="AB" Name="47 Web"/>
+      <Device Model="Core3 UI XPanel" DeviceId="AC" Name="47 Exe"/>
+      <Device Model="Core3 UI XPanel" DeviceId="AD" Name="49 Web"/>
+      <Device Model="Core3 UI XPanel" DeviceId="AE" Name="49 Exe"/>
+      <Device Model="Core3 UI XPanel" DeviceId="AF" Name="50 Web"/>
+      <Device Model="Core3 UI XPanel" DeviceId="B0" Name="50 Exe"/>
+      <Device Model="Core3 UI XPanel" DeviceId="B1" Name="52 Web"/>
+      <Device Model="Core3 UI XPanel" DeviceId="B2" Name="52 Exe"/>
+      <Device Model="Fusion Room" DeviceId="F0" Name="OBS 48"/>
+      <Device Model="Fusion Room" DeviceId="F1" Name="OBS 51"/>
+      <Device Model="Fusion Room" DeviceId="F2" Name="24.1.07"/>
+      <Device Model="Fusion Room" DeviceId="F3" Name="24.1.46"/>
+      <Device Model="Fusion Room" DeviceId="F4" Name="24.1.47"/>
+      <Device Model="Fusion Room" DeviceId="F5" Name="24.1.49"/>
+      <Device Model="Fusion Room" DeviceId="F6" Name="24.1.50"/>
+      <Device Model="Fusion Room" DeviceId="F7" Name="24.1.52"/>
    </Network>
 </Device>
